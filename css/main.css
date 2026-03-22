@@ -492,8 +492,16 @@ html {
     background: rgba(255,255,255,0.1);
     transform: scale(1.1);
   }
-
-
+  .footer {
+    text-align: left;
+    padding: 30px 0;
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+  }
+  
+  body.light .footer {
+    color: rgba(0,0,0,0.5);
+  }
   
   @keyframes honeyMove {
     0% { transform: translate(0, 0); }

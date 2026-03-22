@@ -129,6 +129,20 @@ function changeSlide3(direction) {
   if (currentSlide3 >= slides.length) currentSlide3 = 0;
 
   slides[currentSlide3].classList.add("active");
+
+  
+}
+
+let currentSlide4 = 0;
+
+function changeSlide4(direction) {
+  const slides = document.querySelectorAll(".slide4");
+
+  slides[currentSlide4].classList.remove("active");
+
+  currentSlide4 = (currentSlide4 + direction + slides.length) % slides.length;
+
+  slides[currentSlide4].classList.add("active");
 }
 // =====================
 // BG ANIMATION
@@ -165,14 +179,13 @@ gsap.utils.toArray(".bio-card").forEach((card, i) => {
         scrollTrigger: {
           trigger: card,
           start: "top 85%",
-          toggleActions: "play none none none", // NEMA resetovanja
-          once: true // KLJUČNO
+          toggleActions: "play none none none",
+          once: true
         }
       }
     );
   });
 
-  
 
 // =====================
 // LANG
@@ -262,6 +275,15 @@ translations.en.p3_desc2 = "Includes services, pricing, testimonials, gallery, a
 translations.sr.p3_title = "Midentia sajt";
 translations.sr.p3_desc = "Moderan prezentacioni sajt za ordinaciju dentalne i estetske medicine sa fokusom na dizajn i korisničko iskustvo.";
 translations.sr.p3_desc2 = "Sadrži usluge, cenovnik, iskustva pacijenata, galeriju i kontakt sistem sa responzivnim dizajnom.";
+
+translations.en.p4_title = "Rick and Morty Explorer";
+translations.en.p4_desc = "Frontend application that integrates with a public API to explore characters.";
+translations.en.p4_desc2 = "Users can search, filter, and view detailed character information.";
+
+translations.sr.p4_title = "Rick and Morty Explorer";
+translations.sr.p4_desc = "Frontend aplikacija koja koristi javni API za prikaz likova.";
+translations.sr.p4_desc2 = "Omogućava pretragu, filtriranje i detaljan pregled likova.";
+
 
 function setLang(lang) {
     localStorage.setItem("lang", lang);
@@ -396,3 +418,114 @@ function openCV() {
     }
   });
 
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  
+  let currentImages = [];
+  let currentIndex = 0;
+  
+  // klik na sliku
+  document.querySelectorAll(".project-slider img").forEach((img, index, arr) => {
+    img.addEventListener("click", () => {
+  
+      // uzmi sve slike iz tog slidera
+      currentImages = Array.from(img.closest(".slider-wrapper").querySelectorAll("img"));
+  
+      currentIndex = currentImages.indexOf(img);
+  
+      showLightbox();
+    });
+  });
+  
+  function showLightbox() {
+    lightbox.classList.remove("hidden");
+    lightboxImg.src = currentImages[currentIndex].src;
+  }
+  
+  function closeLightbox() {
+    lightbox.classList.add("hidden");
+  }
+  
+  function changeLightbox(direction) {
+    currentIndex = (currentIndex + direction + currentImages.length) % currentImages.length;
+    lightboxImg.src = currentImages[currentIndex].src;
+  }
+  
+  // klik van zatvara
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  
+  // ESC zatvara
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLightbox();
+  
+    if (e.key === "ArrowRight") changeLightbox(1);
+    if (e.key === "ArrowLeft") changeLightbox(-1);
+  });
+
+
+  let startX = 0;
+let endX = 0;
+
+lightbox.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+});
+
+lightbox.addEventListener("touchend", (e) => {
+  endX = e.changedTouches[0].clientX;
+
+  handleSwipe();
+});
+
+function handleSwipe() {
+  const diff = startX - endX;
+
+  // minimal distance da ne registruje svaki dodir
+  if (Math.abs(diff) < 50) return;
+
+  if (diff > 0) {
+    // swipe left → next
+    changeLightbox(1);
+  } else {
+    // swipe right → prev
+    changeLightbox(-1);
+  }
+}
+
+const dots = document.querySelectorAll(".dot");
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const top = section.offsetTop - 200;
+
+    if (scrollY >= top) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  dots.forEach(dot => {
+    dot.classList.remove("active");
+
+    if (dot.getAttribute("href") === "#" + current) {
+      dot.classList.add("active");
+    }
+  });
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+sections.forEach(section => {
+  observer.observe(section);
+});

@@ -27,7 +27,7 @@
 
 
 <!-- HERO -->
-<section class="section flex items-center justify-center text-center">
+<section id="hero" class="section flex items-center justify-center text-center">
   <div class="tilt-card">
     <div class="card-inner">
 
@@ -54,7 +54,7 @@
 </section>
 
 <!-- ABOUT / BIO -->
-<section class="section flex about-section items-centar justify-center about-bg">
+<section id="about" class="section flex about-section items-centar justify-center about-bg">
     <div class="max-w-6xl grid md:grid-cols-2 gap-12 items-center">
   
       <!-- LEFT -->
@@ -144,7 +144,7 @@
   </section>
 
 <!-- PROJECT 1 -->
-<section class="section project project-honey">
+<section id="project1" class="section project project-honey">
 
     <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
   
@@ -188,9 +188,9 @@
         <button class="slider-btn prev" onclick="changeSlide(-1)">‹</button>
       
         <div class="slider-wrapper">
-          <img src="assets/images/honey1.jpg" class="slide active">
-          <img src="assets/images/honey2.jpg" class="slide">
-          <img src="assets/images/honey3.jpg" class="slide">
+          <img src="assets/images/honey1.jpg" loading="lazy" class="slide active">
+          <img src="assets/images/honey2.jpg" loading="lazy" class="slide">
+          <img src="assets/images/honey3.jpg" loading="lazy" class="slide">
         </div>
       
         <button class="slider-btn next" onclick="changeSlide(1)">›</button>
@@ -202,7 +202,7 @@
   </section>
 
 <!-- PROJECT 2 -->
-<section class="section project project-hotel">
+<section id="project2" class="section project project-hotel">
 
     <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
   
@@ -212,10 +212,10 @@
         <button class="slider-btn prev" onclick="changeSlide2(-1)">‹</button>
   
         <div class="slider-wrapper">
-          <img src="assets/images/hotel1.jpg" class="slide2 active">
-          <img src="assets/images/hotel2.jpg" class="slide2">
-          <img src="assets/images/hotel3.jpg" class="slide2">
-          <img src="assets/images/hotel4.jpg" class="slide2">
+          <img src="assets/images/hotel1.jpg" loading="lazy" class="slide2 active">
+          <img src="assets/images/hotel2.jpg" loading="lazy" class="slide2">
+          <img src="assets/images/hotel3.jpg" loading="lazy" class="slide2">
+          <img src="assets/images/hotel4.jpg" loading="lazy" class="slide2">
         </div>
   
         <button class="slider-btn next" onclick="changeSlide2(1)">›</button>
@@ -262,7 +262,7 @@
   </section>
 
 <!-- PROJECT 3 -->
-<section class="section project project-dental">
+<section id="project3" class="section project project-dental">
 
     <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
   
@@ -307,10 +307,10 @@
         <button class="slider-btn prev" onclick="changeSlide3(-1)">‹</button>
   
         <div class="slider-wrapper">
-          <img src="assets/images/midentia1.jpg" class="slide3 active">
-          <img src="assets/images/midentia2.jpg" class="slide3">
-          <img src="assets/images/midentia3.jpg" class="slide3">
-          <img src="assets/images/midentia4.jpg" class="slide3">
+          <img src="assets/images/midentia1.jpg" loading="lazy" class="slide3 active">
+          <img src="assets/images/midentia2.jpg" loading="lazy" class="slide3">
+          <img src="assets/images/midentia3.jpg" loading="lazy" class="slide3">
+          <img src="assets/images/midentia4.jpg" loading="lazy" class="slide3">
         </div>
   
         <button class="slider-btn next" onclick="changeSlide3(1)">›</button>
@@ -321,8 +321,64 @@
   
   </section>
 
+<!-- PROJECT 4 -->
+  <section id="project4" class="section project project-rick">
+
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+  
+      <!-- LEFT (SLIDER) -->
+      <div class="project-slider order-2 md:order-1">
+  
+        <button class="slider-btn prev" onclick="changeSlide4(-1)">‹</button>
+  
+        <div class="slider-wrapper">
+          <img src="assets/images/ricky1.jpg" loading="lazy" class="slide4 active">
+          <img src="assets/images/ricky2.jpg" loading="lazy" class="slide4">
+        </div>
+  
+        <button class="slider-btn next" onclick="changeSlide4(1)">›</button>
+  
+      </div>
+  
+      <!-- RIGHT (TEXT) -->
+      <div class="order-1 md:order-2">
+  
+        <h2 class="text-4xl font-bold mb-4 project-title" data-key="p4_title">
+          Rick and Morty Explorer
+        </h2>
+  
+        <p class="text-gray-300 mb-4 leading-relaxed text-lg" data-key="p4_desc">
+          Frontend application that integrates with a public API to explore characters.
+        </p>
+  
+        <p class="text-gray-400 mb-6 leading-relaxed" data-key="p4_desc2">
+          Users can search, filter, and view detailed character information.
+        </p>
+  
+        <!-- TECH -->
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="skill">Angular</span>
+          <span class="skill">TypeScript</span>
+          <span class="skill">REST API</span>
+          <span class="skill">HTML/CSS</span>
+        </div>
+  
+        <!-- LINK -->
+        <a href="https://github.com/UrosMet/RickAndMorty"
+           target="_blank"
+           class="project-link"
+           data-key="view_code">
+          View Code →
+        </a>
+  
+      </div>
+  
+    </div>
+  
+  </section>
+
 <!-- FOOTER -->
-<section class="section contact-section flex items-center justify-center">
+<section id="contact" class="section contact-section flex items-center justify-center">
 
     <div class="max-w-6xl w-full grid md:grid-cols-2 gap-16 items-center">
   
@@ -397,6 +453,30 @@
       </iframe>
   
     </div>
+  
+  </div>
+
+  <div id="lightbox" class="lightbox hidden">
+
+    <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+  
+    <button class="lightbox-nav prev" onclick="changeLightbox(-1)">‹</button>
+  
+    <img id="lightbox-img" src="" alt="preview">
+  
+    <button class="lightbox-nav next" onclick="changeLightbox(1)">›</button>
+  
+  </div>
+
+  <div class="scroll-indicator">
+
+    <a href="#hero" class="dot active" data-label="Hero"></a>
+    <a href="#about" class="dot" data-label="About"></a>
+    <a href="#project1" class="dot" data-label="Honey Subscription"></a>
+    <a href="#project2" class="dot" data-label="Hotel Management"></a>
+    <a href="#project3" class="dot" data-label="Midentia"></a>
+    <a href="#project4" class="dot" data-label="Ricky and Morty"></a>
+    <a href="#contact" class="dot" data-label="Contact"></a>
   
   </div>
 

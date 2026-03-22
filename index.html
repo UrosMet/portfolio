@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uros Mirkovic</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="text-white overflow-x-hidden">
+
+<!-- BACKGROUND -->
+<div class="bg-blur"></div>
+<div class="bg-blur2"></div>
+
+<!-- LANGUAGE -->
+<div class="fixed top-5 right-5 z-50 bg-white/10 backdrop-blur px-4 py-2 rounded-full">
+  <button onclick="setLang('en')">EN</button>
+  <button onclick="setLang('sr')">SR</button>
+</div>
+
+<!-- HERO -->
+<section class="section flex items-center justify-center text-center">
+  <div class="tilt-card">
+    <div class="card-inner">
+
+      <img src="assets/images/profile.jpg" class="w-28 h-28 mx-auto rounded-full mb-5 object-cover">
+
+      <h1 class="text-4xl font-bold mb-2" data-key="name">
+        Uroš Mirković
+      </h1>
+
+      <p id="typing" class="text-blue-400 mb-3 typing"></p>
+
+      <p class="text-gray-300 leading-relaxed" data-key="about">
+        Bachelor of Software Engineering at Metropolitan University.
+      </p>
+
+      <button onclick="scrollToNext()" 
+      class="mt-8 px-6 py-3 rounded-full border border-white/20 hover:bg-white hover:text-black transition">
+        ↓
+      </button>
+
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / BIO -->
+<section class="section flex about-section items-centar justify-center about-bg">
+    <div class="max-w-6xl grid md:grid-cols-2 gap-12 items-center">
+  
+      <!-- LEFT -->
+      <div>
+  
+        <h2 class="text-3xl font-bold mb-6 about-title" data-key="about_title">
+            About Me
+          </h2>
+          
+          <p class="text-gray-300 leading-relaxed mb-6" data-key="about_text">
+            I am a graduate Software Engineer with a degree from Metropolitan University. 
+            I specialize in building scalable systems, backend architectures, and modern web applications.
+          </p>
+          
+          <p class="text-gray-400 leading-relaxed" data-key="about_text2">
+            I am a highly motivated and ambitious individual with a strong passion for technology and continuous improvement. 
+            My experience in both individual and team environments allows me to deliver reliable and high-performance solutions.
+          </p>
+  
+        <!-- CONTACT -->
+        <div class="mt-6 text-sm text-gray-400 space-y-1">
+          <p>📧 euros.mirkovic@gmail.com</p>
+          <p>📞 +381653212486</p>
+          <p>🔗 github.com/UrosMet</p>
+        </div>
+        <div class="flex gap-6 mt-6">
+
+            <a href="assets/UrosMirkovic-CV.pdf" download class="cv-btn" data-key="cv_download">
+                Download CV ⬇  
+            </a>
+          
+            <button onclick="openCV()" class="cv-btn preview-btn" data-key="cv_preview">
+                Preview CV
+              </button>
+          
+          </div>
+
+      </div>
+  
+      <!-- RIGHT -->
+      <div class="space-y-6">
+  
+        <!-- EDUCATION -->
+        <div class="bio-card skills-card">
+            <h3 class="font-semibold mb-2 text-lg" data-key="education_title">🎓 Education</h3>
+            <p class="text-gray-300">Metropolitan University</p>
+            <p class="text-gray-500 text-sm" data-key="education_uni">Software Engineering (2021–2026)</p>
+            
+            <p class="text-gray-300">ETŠ Nikola Tesla</p>
+            <p class="text-gray-500 text-sm" data-key="education_high">IT Engineer (2015–2019)</p>
+        </div>
+  
+        <!-- SKILLS -->
+        <div class="bio-card skills-card">
+            <h3 class="font-semibold mb-2 text-lg" data-key="skills_title">
+                ⚡ Skills
+              </h3>
+  
+          <div class="flex flex-wrap gap-2">
+            <span class="skill">Java</span>
+            <span class="skill">Spring Boot</span>
+            <span class="skill">Angular</span>
+            <span class="skill">MySQL</span>
+            <span class="skill">Node.js</span>
+            <span class="skill">TypeScript</span>
+            <span class="skill">HTML/CSS/JS</span>
+            <span class="skill">C#</span>
+            <span class="skill">Architecture</span>
+            <span class="skill">Testing</span>
+            <span class="skill">Algorithms</span>
+          </div>
+        </div>
+  
+        <!-- EXTRA -->
+        <div class="bio-card skills-card">
+            <h3 class="font-semibold mb-2 text-lg" data-key="extra_title">
+                🌍 Language & License
+              </h3>
+              
+              <p class="text-gray-300" data-key="language">English (B2)</p>
+              <p class="text-gray-400 mt-2" data-key="license">Driving License: B, A</p>
+        </div>
+  
+      </div>
+  
+    </div>
+  </section>
+
+<!-- PROJECT 1 -->
+<section class="section project project-honey">
+
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+  
+      <!-- LEFT (TEXT) -->
+      <div>
+        <h2 class="text-4xl font-bold mb-4 honey-title" data-key="p1_title">
+            Honey Subscription Platform
+          </h2>
+  
+        <p class="text-gray-300 mb-4 leading-relaxed text-lg" data-key="p1_desc">
+          Fullstack web platform for managing honey subscriptions, orders, and deliveries.
+        </p>
+  
+        <p class="text-gray-400 mb-6 leading-relaxed" data-key="p1_desc2">
+          The system allows users to subscribe to products, track deliveries, and manage orders,
+          while administrators can manage products, payments, and users.
+        </p>
+  
+        <!-- TECH -->
+        <div class="flex flex-wrap gap-2">
+          <span class="skill">Spring Boot</span>
+          <span class="skill">Angular</span>
+          <span class="skill">MySQL</span>
+          <span class="skill">JWT</span>
+          <span class="skill">REST API</span>
+          <span class="skill">Postman</span>
+        </div>
+      </div>
+  
+      <div class="project-slider">
+
+        <button class="slider-btn prev" onclick="changeSlide(-1)">‹</button>
+      
+        <div class="slider-wrapper">
+          <img src="assets/images/honey1.jpg" class="slide active">
+          <img src="assets/images/honey2.jpg" class="slide">
+          <img src="assets/images/honey3.jpg" class="slide">
+        </div>
+      
+        <button class="slider-btn next" onclick="changeSlide(1)">›</button>
+      
+      </div>
+  
+    </div>
+  
+  </section>
+
+<!-- PROJECT 2 -->
+<section class="section project project-hotel">
+
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+  
+      <!-- LEFT (SLIDER) -->
+      <div class="project-slider order-2 md:order-1">
+  
+        <button class="slider-btn prev" onclick="changeSlide2(-1)">‹</button>
+  
+        <div class="slider-wrapper">
+          <img src="assets/images/honey1.jpg" class="slide2 active">
+          <img src="assets/images/honey2.jpg" class="slide2">
+          <img src="assets/images/honey3.jpg" class="slide2">
+        </div>
+  
+        <button class="slider-btn next" onclick="changeSlide2(1)">›</button>
+  
+      </div>
+  
+      <!-- RIGHT (TEXT) -->
+      <div class="order-1 md:order-2">
+        <h2 class="text-4xl font-bold mb-4 hotel-title" data-key="p2_title">
+          Hotel Management System
+        </h2>
+  
+        <p class="text-gray-300 mb-4 leading-relaxed text-lg" data-key="p2_desc">
+          Fullstack web application for managing hotel operations including reservations, guests, and administration.
+        </p>
+  
+        <p class="text-gray-400 mb-6 leading-relaxed" data-key="p2_desc2">
+          The system supports receptionist workflows, room management, reservations, transport services,
+          and financial tracking with a dedicated admin panel.
+        </p>
+  
+        <!-- TECH -->
+        <div class="flex flex-wrap gap-2">
+          <span class="skill">Angular 16</span>
+          <span class="skill">Spring Boot</span>
+          <span class="skill">MySQL</span>
+          <span class="skill">JWT</span>
+          <span class="skill">REST API</span>
+          <span class="skill">Maven</span>
+        </div>
+      </div>
+  
+    </div>
+  
+  </section>
+
+<!-- PROJECT 3 -->
+<section class="section project project-dental">
+
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+  
+      <!-- LEFT (TEXT) -->
+      <div>
+        <h2 class="text-4xl font-bold mb-4" data-key="p3_title">
+          Midentia Website
+        </h2>
+  
+        <p class="text-gray-300 mb-4 leading-relaxed text-lg" data-key="p3_desc">
+          Modern presentation website for a dental and aesthetic medicine clinic,
+          focused on clean design, user experience, and patient trust.
+        </p>
+  
+        <p class="text-gray-400 mb-6 leading-relaxed" data-key="p3_desc2">
+          The website includes service presentation, pricing, testimonials,
+          gallery, and contact system, designed with a responsive and elegant UI.
+        </p>
+  
+        <!-- TECH -->
+        <div class="flex flex-wrap gap-2">
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+          <span class="skill">Tailwind</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">Responsive Design</span>
+        </div>
+      </div>
+  
+      <!-- RIGHT (SLIDER) -->
+      <div class="project-slider">
+  
+        <button class="slider-btn prev" onclick="changeSlide3(-1)">‹</button>
+  
+        <div class="slider-wrapper">
+          <img src="assets/images/honey1.jpg" class="slide3 active">
+          <img src="assets/images/honey2.jpg" class="slide3">
+          <img src="assets/images/honey3.jpg" class="slide3">
+        </div>
+  
+        <button class="slider-btn next" onclick="changeSlide3(1)">›</button>
+  
+      </div>
+  
+    </div>
+  
+  </section>
+
+<!-- FOOTER -->
+<section class="section contact-section flex items-center justify-center">
+
+    <div class="max-w-6xl w-full grid md:grid-cols-2 gap-16 items-center">
+  
+      <!-- LEFT (FORM) -->
+      <div>
+        <h2 class="text-3xl font-bold mb-4 contact-title" data-key="contact_title">
+            Contact Me
+          </h2>
+          
+          <p class="text-gray-400 mb-6" data-key="contact_desc">
+            Feel free to reach out for collaboration, projects, or any questions.
+          </p>
+  
+          <form action="https://formspree.io/f/maqpgwlr" method="POST" class="space-y-4">
+  
+            <input type="text" name="name" placeholder="" data-placeholder="contact_name" class="input-field" required />
+
+  <input type="email" name="email" placeholder="" data-placeholder="contact_email" class="input-field" required />
+
+  <textarea name="message" placeholder="" data-placeholder="contact_message" class="input-field h-32 resize-none" required></textarea>
+
+  <button type="submit" class="contact-btn" data-key="contact_btn">
+    Send Message
+  </button>
+  
+        </form>
+      </div>
+  
+      <!-- RIGHT (INFO) -->
+      <div class="flex flex-col justify-center space-y-6">
+  
+        <div>
+            <p class="text-gray-400 text-sm" data-key="contact_email_label">Email</p>
+          <a href="mailto:euros.mirkovic@gmail.com" class="contact-link">
+            euros.mirkovic@gmail.com
+          </a>
+        </div>
+  
+        <div>
+            <p class="text-gray-400 text-sm" data-key="contact_phone_label">Phone</p>
+          <a href="tel:+381653212486" class="contact-link">
+            +381653212486
+          </a>
+        </div>
+  
+        <div class="flex gap-4 mt-4">
+          <a href="https://github.com/UrosMet" target="_blank" class="social">GitHub</a>
+          <a href="#" target="_blank" class="social">LinkedIn</a>
+          <a href="#" target="_blank" class="social">Instagram</a>
+        </div>
+  
+      </div>
+  
+    </div>
+  </section>
+
+  <div id="toast" class="toast">
+    Message sent successfully!
+  </div>
+
+  <div id="cv-modal" class="cv-modal hidden">
+  
+    <div class="cv-modal-content">
+  
+      <button class="cv-close" onclick="closeCV()">✕</button>
+  
+      <iframe 
+        src="assets/UrosMirkovic-CV.pdf"
+        frameborder="0">
+      </iframe>
+  
+    </div>
+  
+  </div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

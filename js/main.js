@@ -309,6 +309,8 @@ translations.en.cv_preview = "Preview CV 👁";
 translations.sr.cv_download = "Preuzmi CV ⬇";
 translations.sr.cv_preview = "Pregled CV-a 👁";
 
+translations.en.view_code = "View Code →";
+translations.sr.view_code = "Pogledaj kod →";
 // =====================
 // SCROLL BUTTON
 // =====================

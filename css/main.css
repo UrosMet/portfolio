@@ -151,7 +151,7 @@ html {
     display: none;
     border-radius: 20px;
     aspect-ratio: 15 / 16;
-    object-fit: cover;
+    object-fit: fill;
     box-shadow: 0 20px 60px rgba(0,0,0,0.6);
   }
   

@@ -2,7 +2,7 @@
 // TYPING
 // =====================
 
-const texts = ["Fullstack Developer", "Backend Developer"];
+const texts = ["Fullstack Developer"];
 
 let i = 0, j = 0, currentText = "", isDeleting = false;
 
@@ -215,7 +215,7 @@ translations.en.about_text = "I am a Bachelor of Software Engineering from Metro
 translations.en.about_text2 = "My focus is on reliability, performance, and clean architecture.";
 
 translations.sr.about_title = "O meni";
-translations.sr.about_text = "Ja sam diplomirani softverski inženjer sa Univerziteta Metropolitan. Specijalizovan za razvoj skalabilnih sistema i backend arhitekture.";
+translations.sr.about_text = "Ja sam diplomirani softverski inženjer na Univerzitetu Metropolitan. Specijalizovan za razvoj skalabilnih sistema i backend arhitekture.";
 translations.sr.about_text2 = "Moj glavni fokus na pouzdanosti, performansama i čistoj arhitekturi.";
 
 translations.en.about_title = "About Me";
@@ -233,7 +233,7 @@ translations.en.language = "English";
 translations.en.license = "Driving License: B, A";
 
 translations.sr.about_title = "O meni";
-translations.sr.about_text = "Ja sam diplomirani softverski inženjer sa Univerziteta Metropolitan. Specijalizovan za razvoj skalabilnih sistema, backend arhitekture i modernih web aplikacija.";
+translations.sr.about_text = "Ja sam diplomirani softverski inženjer na Univerzitetu Metropolitan. Specijalizovan za razvoj skalabilnih sistema, backend arhitekture i modernih web aplikacija.";
 translations.sr.about_text2 = "Za sebe mislim da sam motivisana i ambiciozna osoba sa velikom strašću prema tehnologiji i stalnom unapređenju. Imam iskustvo u timskom radu na fakultetskim projektima i iskustvo u samostalnom radu koje mi omogućava da isporučim pouzdana i visoko-performantna rešenja.";
 
 translations.sr.education_title = "🎓 Obrazovanje";
@@ -333,6 +333,9 @@ translations.sr.cv_preview = "Pregled CV-a 👁";
 
 translations.en.view_code = "View Code →";
 translations.sr.view_code = "Pogledaj kod →";
+
+translations.en.hero_subtitle = "Building scalable systems & modern web applications";
+translations.sr.hero_subtitle = "Razvoj skalabilnih sistema i modernih web aplikacija";
 // =====================
 // SCROLL BUTTON
 // =====================
